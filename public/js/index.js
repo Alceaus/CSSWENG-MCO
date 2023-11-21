@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* Register Form */
 document.addEventListener('DOMContentLoaded', function() {
-    // const registerForm = document.getElementById('register-form');
+    const registerForm = document.getElementById('register-form');
     const registerPassword = document.getElementById('register-password');
     const registerConfirmPassword = document.getElementById('register-confirmPassword');
 
@@ -62,48 +62,51 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // registerForm.addEventListener('submit', function(event) {
-    //     event.preventDefault();
+    registerForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    //     // Get the entered username and password
-    //     const firstName = document.getElementById('register-firstName').value;
-    //     const middleName = document.getElementById('register-middleName').value;
-    //     const lastName = document.getElementById('register-lastName').value;
-    //     const suffix = document.getElementById('register-suffix').value;
-    //     const companyID = document.getElementById('register-companyID').value;
-    //     const password = document.getElementById('register-password').value;
-    //     const confirmPassword = document.getElementById('register-confirmPassword').value;
+    // Get the entered username and password
+    const firstName = document.getElementById('register-firstName').value;
+    const middleName = document.getElementById('register-middleName').value;
+    const lastName = document.getElementById('register-lastName').value;
+    const suffix = document.getElementById('register-suffix').value;
+    const companyID = document.getElementById('register-companyID').value;
+    const password = document.getElementById('register-password').value;
+    const confirmPassword = document.getElementById('register-confirmPassword').value;
 
-    //     // Perform client-side validation (e.g., check if fields are not empty)
-    //     if (firstName === '' || lastName === '' || companyID === '' || password === '' || confirmPassword === '') {
-    //         firstName.setCustomValidity('Please fill out this field.');
-    //         return;
-    //     }
+    // Perform client-side validation (e.g., check if fields are not empty)
+    if (firstName === '' || lastName === '' || companyID === '' || password === '' || confirmPassword === '') {
+        firstName.setCustomValidity('Please fill out this field.');
+        registerForm.reset();
+        return;
+    }
 
-    //     // Perform client-side validation (e.g., check if passwords match)
-    //     if (password !== confirmPassword) {
-    //         alert('Passwords do not match.');
-    //         return;
-    //     }
+    // Perform client-side validation (e.g., check if passwords match)
+    if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        registerForm.reset();
+        return;
+    }
 
-    //     // Perform client-side validation (e.g., check if password is at least 8 characters long)
-    //     if (password.length < 8) {
-    //         alert('Password must be at least 8 characters long.');
-    //         return;
-    //     }
+    // Perform client-side validation (e.g., check if password is at least 8 characters long)
+    if (password.length < 8) {
+        alert('Password must be at least 8 characters long.');
+        registerForm.reset();
+        return;
+    }
 
-    //     // Perform client-side validation (e.g., check if company ID is 10 characters long)
-    //     if (companyID.length !== 10) {
-    //         alert('Company ID must be 10 characters long.');
-    //         return;
-    //     }
+    // Perform client-side validation (e.g., check if company ID is 10 characters long)
+    if (companyID.length !== 10) {
+        alert('Company ID must be 10 characters long.');
+        registerForm.reset();
+        return;
+    }
 
-    //     // Perform client-side validation (e.g., check if company ID is a number)
-    //     if (isNaN(companyID)) {
-    //         alert('Company ID must be a number.');
-    //         return;
-    //     }
-
-
-    // });
+    // Perform client-side validation (e.g., check if company ID is a number)
+    if (isNaN(companyID)) {
+        alert('Company ID must be a number.');
+        registerForm.reset();
+        return;
+    }
+    });
 });
