@@ -83,7 +83,7 @@
             <div class="main-container">
 
                 <form action="/new-tracker" method="post" id="new-tracker-form">
-                    <button type="button" id="btn-create-new-tracker" class="btn btn-success mb-3 me-3">Create New Tracker</button>
+                    <button type="submit" id="btn-create-new-tracker" class="btn btn-success mb-3 me-3">Create New Tracker</button>
                     <button type="button" id="btw-cancel-tracker" class="btn btn-danger mb-3 me-3" data-bs-toggle="modal" data-bs-target="#discardTrackerModal" >Discard Tracker</button>
 
                     <input type="hidden" name="action" value="create-new-tracker">
@@ -93,11 +93,51 @@
                             <div class="mb-3">
                                 <label for="new-project-name" class="form-label fw-bold new-tracker-to-do">Project Name</label>
                                 <input type="text" class="form-control" id="new-project-name" placeholder="Enter Project Name" required>
+
+                                <!-- Error Message -->
+								<div class="alert alert-danger mt-3" id="project-name-message" style="display:none" role="alert"></div>
+
                             </div>
                             <div class="mb-3">
                                 <label for="new-project-desc" class="form-label fw-bold new-tracker-to-do">Project Description</label>
                                 <input type="text" class="form-control" id="new-project-desc" placeholder="Enter Project Description" required>
+
+                                <!-- Error Message -->
+								<div class="alert alert-danger mt-3" id="project-desc-message" style="display:none" role="alert"></div>
+
                             </div>
+<<<<<<< Updated upstream
+=======
+                            <!-- Project Location -->
+                            <div class="mb-3">
+                                <label for="new-project-location" class="form-label fw-bold fs-4 new-tracker-to-do">Project Location</label>
+                                <input type="text" class="form-control" id="new-project-location" placeholder="Enter Project Location" required>
+
+                                <!-- Error Message -->
+								<div class="alert alert-danger mt-3" id="project-location-message" style="display:none" role="alert"></div>
+
+                            </div>
+                        </div>
+
+                        <!-- Project Duration -->
+                        <div class="reports project-duration">
+                            <div class="mb-3">
+                                <label for="new-project-status" class="form-label fw-bold fs-4 new-tracker-to-do">Project Status</label>
+                                <select class="form-select mb-3" id="new-project-status" required>
+                                    <option value="" selected disabled hidden>Choose Status</option>
+                                    <option value="ON-GOING">ON-GOING</option>
+                                    <option value="COMPLETED">COMPLETED</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="new-project-start-date" class="form-label fw-bold fs-4 new-tracker-to-do">Start Date</label>
+                                <input type="date" class="form-control" id="new-project-start-date">
+                            </div>
+                            <div class="mb-3">
+                                <label for="new-project-end-date" class="form-label fw-bold fs-4 new-tracker-to-do">End Date</label>
+                                <input type="date" class="form-control" id="new-project-end-date">
+                            </div>
+>>>>>>> Stashed changes
                         </div>
                     </div>
                 </form>
