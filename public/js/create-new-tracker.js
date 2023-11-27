@@ -165,12 +165,6 @@ document.addEventListener('DOMContentLoaded',  function (e) {
             },
             // body: JSON.stringify(employeeListData)
             body: data
-<<<<<<< Updated upstream
-        });
-    });
-    
-    });
-=======
         }).then(response => {
             if (response.ok) {
                 return response.json(); // Assuming your server sends JSON data
@@ -187,4 +181,3 @@ document.addEventListener('DOMContentLoaded',  function (e) {
         })
     });*/
 });
->>>>>>> Stashed changes
